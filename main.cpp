@@ -14,11 +14,13 @@ vector<vector<int> > G[N];
 int d[N];
 int pre[N];
 
+// vertices - u, v | weight - w
 void addEdge(vector<vector<int> > G[], int u, int v, int w) {
     G[u].push_back({v, w});
     G[v].push_back({u, w});
 }
 
+// source vertex - s
 vector<int> dijkstra(vector<vector<int> > G[], int s) {
     for (int i = 0; i < N; i++) {
         d[i] = INF;
@@ -54,7 +56,7 @@ vector<int> dijkstra(vector<vector<int> > G[], int s) {
 }
 
 int main() {
-    addEdge(G, 0, 5, 4);
+    addEdge(G, 0, 5, 4);    // edge: vertex 0 - vertex 5 | weight 4
     addEdge(G, 0, 3, 9);
     addEdge(G, 5, 4, 1);
     addEdge(G, 4, 1, 2);
